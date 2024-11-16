@@ -22,7 +22,7 @@ const JournalPage = async () => {
   const entries = await getEntries()
   console.log('entries', entries)
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 p-10">
       <NewEntryCard />
       {entries.map((entry) => (
         <EntryCard key={entry.id} entry={entry} />
