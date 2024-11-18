@@ -34,6 +34,7 @@ export const analyze = async (content) => {
       baseURL: 'http://127.0.0.1:1337/v1',
     },
   })
+  console.log(input)
   const result = await model.invoke(input)
   console.log(result)
 }
