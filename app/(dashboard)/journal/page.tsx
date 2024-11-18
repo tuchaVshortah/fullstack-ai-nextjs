@@ -4,6 +4,7 @@ import { getUserByClerkID } from '@/utils/auth'
 import NewEntryCard from '@/components/NewEntryCard'
 import EntryCard from '@/components/EntryCard'
 import Link from 'next/link'
+import { analyze } from '@/utils/ai'
 
 const getEntries = async () => {
   const user = await getUserByClerkID()
@@ -15,6 +16,8 @@ const getEntries = async () => {
       createdAt: 'desc',
     },
   })
+
+  await analyze('Is it possible to bake a website in an oven?')
 
   return entries
 }
