@@ -26,7 +26,7 @@ const parser = StructuredOutputParser.fromZodSchema(
 )
 
 export const analyze = async (content) => {
-  const input = getPrompt(content)
+  const input = await getPrompt(content)
   const model = new ChatOpenAI({
     temperature: 0,
     modelName: 'tinyllama-1.1b',
