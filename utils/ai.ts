@@ -29,7 +29,7 @@ export const analyze = async (content) => {
   const input = await getPrompt(content)
   const model = new ChatOpenAI({
     temperature: 0,
-    modelName: 'tinyllama-1.1b',
+    modelName: 'codeninja-1.0-7b',
     configuration: {
       baseURL: 'http://127.0.0.1:1337/v1',
     },
