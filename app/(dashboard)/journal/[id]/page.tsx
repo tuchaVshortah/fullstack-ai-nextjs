@@ -18,6 +18,7 @@ const getEntry = async (id) => {
 }
 
 const EntryPage = async ({ params }) => {
+  params = await params
   const entry = await getEntry(params.id)
 
   return (
