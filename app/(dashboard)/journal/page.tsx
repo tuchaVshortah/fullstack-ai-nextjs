@@ -17,7 +17,7 @@ const getEntries = async () => {
     },
   })
 
-  await analyze('Is it possible to bake a website in an oven?')
+  await analyze('Today was a good day')
 
   return entries
 }
