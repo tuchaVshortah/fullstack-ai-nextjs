@@ -8,7 +8,7 @@ export const POST = async (request: Request) => {
   const entry = await prisma.journalEntry.create({
     data: {
       userId: user.id as string,
-      content: 'Wriet about your day!',
+      content: 'Write about your day!',
     },
   })
 
