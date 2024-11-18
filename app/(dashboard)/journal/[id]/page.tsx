@@ -5,7 +5,7 @@ import React from 'react'
 
 const getEntry = async (id) => {
   const user = await getUserByClerkID()
-  const entry = prisma.journalEntry.findUnique({
+  const entry = await prisma.journalEntry.findUnique({
     where: {
       userId_id: {
         userId: user.id,
