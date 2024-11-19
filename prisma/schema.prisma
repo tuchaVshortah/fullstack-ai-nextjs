@@ -47,7 +47,7 @@ model Analysis {
   negative       Boolean
   subject        String
   sentimentScore Int
-  entry          JournalEntry @relation(fields: [entryId], references: [id])
+  entry          JournalEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
 
   @@index([entryId])
 }
