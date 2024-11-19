@@ -24,16 +24,16 @@ model User {
 }
 
 model JournalEntry {
-  id        String    @id @default(uuid()) @unique
+  id        String    @id @unique @default(uuid())
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   content   String    @db.Text
   user      User      @relation(fields: [userId], references: [id])
-  userId    String    
+  userId    String
   analysis  Analysis?
 
-  @@index([userId])
   @@unique([userId, id])
+  @@index([userId])
 }
 
 model Analysis {
@@ -45,6 +45,7 @@ model Analysis {
   summary   String       @db.Text
   color     String
   negative  Boolean
+  subject   String
   entry     JournalEntry @relation(fields: [entryId], references: [id])
 
   @@index([entryId])
