@@ -1,21 +1,29 @@
 'use client'
 
+import { askQuestion } from '@/utils/api'
 import React, { useState } from 'react'
 
 const Question = () => {
   const [value, setValue] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [response, setResponse] = useState('')
   const onChange = (e) => {
     setValue(e.target.value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setLoading(true)
+    const answer = await askQuestion(value)
+    setResponse(answer)
+    setLoading(false)
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
+          disabled={loading}
           type="text"
           value={value}
           onChange={onChange}
@@ -29,6 +37,8 @@ const Question = () => {
           Ask
         </button>
       </form>
+      {loading && <div>...loading</div>}
+      {response && <div>{response}</div>}
     </div>
   )
 }
