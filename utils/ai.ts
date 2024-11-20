@@ -80,12 +80,20 @@ export const qa = async (question, entries) => {
     },
   })
 
+  // I cannot use the code below because I did run LLMs locally using Jan
+  // and its server simply does not expose any APIs to interact with embeddings.
+  //
   const chain = loadQARefineChain(model)
-  const embeddings = new OpenAIEmbeddings()
-  const store = await MemoryVectorStore.fromDocuments(docs, embeddings)
-  const relevantDocs = await store.similaritySearch(question)
+  // const embeddings = new OpenAIEmbeddings()
+  // const store = await MemoryVectorStore.fromDocuments(docs, embeddings)
+  // const relevantDocs = await store.similaritySearch(question)
+  // const res = await chain.invoke({
+  //   input_documents: relevantDocs,
+  //   question,
+  // })
+
   const res = await chain.invoke({
-    input_documents: relevantDocs,
+    input_documents: docs,
     question,
   })
 
