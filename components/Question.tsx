@@ -8,9 +8,13 @@ const Question = () => {
     e.preventDefault()
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={value}
