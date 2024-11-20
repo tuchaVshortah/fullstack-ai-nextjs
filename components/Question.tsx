@@ -16,7 +16,7 @@ const Question = () => {
           value={value}
           onChange={onChange}
           placeholder="Ask a question"
-          className="border border-black/20 px-4 py-6 text-lg rounded-lg"
+          className="border border-black/20 px-4 py-2 text-lg rounded-lg"
         />
         <button
           type="submit"
