@@ -1,6 +1,4 @@
 'use client'
-
-import { data } from 'autoprefixer'
 import React from 'react'
 import { ResponsiveContainer, Line, XAxis, Tooltip, LineChart } from 'recharts'
 
