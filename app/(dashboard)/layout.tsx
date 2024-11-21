@@ -21,9 +21,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           ))}
         </ul>
       </aside>
-      <div className="ml-[200px] h-full">
+      <div className="ml-[200px] h-full w-[calc(100vw-200px)]">
         <header className="relative h-[60px] border border-b border-black/10">
-          <div className="h-full w-full px-6 flex items-center justify-end">
+          <div className="w-full h-full px-6 flex items-center justify-end">
             <UserButton />
           </div>
         </header>
